@@ -22,8 +22,8 @@ from test_workflow.perf_test.perf_test_suite import PerfTestSuite
 
 def get_infra_repo_url():
     if "GITHUB_TOKEN" in os.environ:
-        return "https://${GITHUB_TOKEN}@github.com/opensearch-project/opensearch-infra.git"
-    return "https://github.com/opensearch-project/opensearch-infra.git"
+        return "https://${GITHUB_TOKEN}@github.com/kotwanikunal/opensearch-infra.git"
+    return "https://github.com/kotwanikunal/opensearch-infra.git"
 
 
 def main():
