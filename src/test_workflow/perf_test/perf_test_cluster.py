@@ -62,9 +62,9 @@ class PerfTestCluster(TestCluster):
 
     def terminate(self):
         os.chdir(os.path.join(self.current_workspace, self.work_dir))
-        # command = f"cdk destroy {self.params} --force"
-        # logging.info(f'Executing "{command}" in {os.getcwd()}')
-        # subprocess.check_call(command, cwd=os.getcwd(), shell=True)
+        command = f"cdk destroy {self.params} --force"
+        logging.info(f'Executing "{command}" in {os.getcwd()}')
+        subprocess.check_call(command, cwd=os.getcwd(), shell=True)
 
     def service(self):
         return []
