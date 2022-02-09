@@ -24,7 +24,7 @@ void call(Map args = [:]) {
 
 void install_npm(){
     sh'''
-        curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+        curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
         sudo yum install -y nodejs
       '''
 }
