@@ -44,7 +44,10 @@ def main():
 
     with TemporaryDirectory(keep=args.keep, chdir=True) as work_dir:
         current_workspace = os.path.join(work_dir.name, "infra")
+        print('Checking out the git repo')
         with GitRepository(get_infra_repo_url(), "perf-test-fix", current_workspace):
+            print('Checked out the git repo')
+            subprocess.check_call("ls -l", cwd=current_workspace)
             security = "security" in manifest.components
             with WorkingDirectory(current_workspace):
                 with PerfTestCluster.create(manifest, config, args.stack, security, current_workspace) as (test_cluster_endpoint, test_cluster_port):
