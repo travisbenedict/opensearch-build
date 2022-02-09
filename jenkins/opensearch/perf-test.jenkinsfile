@@ -32,7 +32,7 @@ pipeline {
         )
     }
     stages {
-        stage('integ-test') {
+        stage('perf-test') {
             agent {
                 node {
                     label "${AGENT_LABEL}"
