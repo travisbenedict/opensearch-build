@@ -44,6 +44,8 @@ class PerfTestCluster(TestCluster):
 
     def start(self):
         os.chdir(self.work_dir)
+        subprocess.check_call("python3 -m pipenv install", cwd=self.work_dir, shell=True)
+        subprocess.check_call("pipenv install", cwd=self.work_dir, shell=True)
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
         subprocess.check_call(command, cwd=os.getcwd(), shell=True)
