@@ -25,6 +25,9 @@ yamlfix = "*"
 yamllint = "*"
 boto3 = "*"
 aws_requests_auth = "*"
+"aws-cdk.core" = "1.143.0"
+"aws_cdk.aws_ec2" = "1.143.0"
+"aws_cdk.aws_iam" = "1.143.0"
 
 [dev-packages]
 
