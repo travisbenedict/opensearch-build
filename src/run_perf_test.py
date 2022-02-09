@@ -9,7 +9,7 @@
 import argparse
 import os
 import sys
-import time
+import subprocess
 
 import yaml
 
@@ -44,6 +44,8 @@ def main():
 
     with TemporaryDirectory(keep=args.keep, chdir=True) as work_dir:
         current_workspace = os.path.join(work_dir.name, "infra")
+        subprocess.check_call("python3 -m pipenv install", cwd=dir, shell=True)
+        subprocess.check_call("pipenv install", cwd=dir, shell=True)
         with GitRepository(get_infra_repo_url(), "perf-test-fix", current_workspace):
             security = "security" in manifest.components
             with WorkingDirectory(current_workspace):
