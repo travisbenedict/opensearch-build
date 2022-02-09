@@ -14,8 +14,8 @@ pipeline {
     parameters {
         string(
             defaultValue: '',
-            name: 'TEST_MANIFEST',
-            description: 'Test manifest under the manifests folder, e.g. manifests/2.0.0/opensearch-2.0.0-test.yml.',
+            name: 'GITHUB_TOKEN',
+            description: 'Github token for account access.',
             trim: true
         )
         string(
