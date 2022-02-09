@@ -49,11 +49,7 @@ pipeline {
                     echo "BUILD_MANIFEST: ${BUILD_MANIFEST}"
                     echo "BUILD_ID: ${BUILD_ID}"
 
-                    runIntegTestScript(
-                        buildManifest: "${BUILD_MANIFEST}",
-                        testManifest: "${TEST_MANIFEST}",
-                        buildId: "${BUILD_ID}"
-                    )
+                    runPerfTestScript()
                 }
             }
         }
