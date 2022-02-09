@@ -25,6 +25,7 @@ yamlfix = "*"
 yamllint = "*"
 boto3 = "*"
 aws_requests_auth = "*"
+pipenv = "*"
 
 [dev-packages]
 

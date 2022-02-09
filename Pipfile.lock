@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "54ac19fac62fc1912f1f2df0fe2428c67f5c3883b8f048488e1a6a100c7f27af"
+            "sha256": "fa13d87cf397cb06d94aa02ba4cf19c5659569d7e7ffeb26f8d3946bc4a7cc94"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -279,6 +279,22 @@
             ],
             "version": "==0.9.0"
         },
+        "pip": {
+            "hashes": [
+                "sha256:c146f331f0805c77017c6bb9740cec4a49a0d4582d0c3cc8244b057f83eca359",
+                "sha256:f29d589df8c8ab99c060e68ad294c4a9ed896624f6368c5349d70aa581b333d0"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==22.0.3"
+        },
+        "pipenv": {
+            "hashes": [
+                "sha256:3b80b4512934b9d8e8ce12c988394642ff96bb697680e5b092e59af503178327",
+                "sha256:f84d7119239b22ab2ac2b8fbc7d619d83cf41135206d72a17c4f151cda529fd0"
+            ],
+            "index": "pypi",
+            "version": "==2022.1.8"
+        },
         "platformdirs": {
             "hashes": [
                 "sha256:30671902352e97b1eafd74ade8e4a694782bd3471685e78c32d0fdfd3aa7e7bb",
@@ -506,11 +522,11 @@
         },
         "types-requests": {
             "hashes": [
-                "sha256:8ec9f5f84adc6f579f53943312c28a84e87dc70201b54f7c4fbc7d22ecfa8a3e",
-                "sha256:c2f4e4754d07ca0a88fd8a89bbc6c8a9f90fb441f9c9b572fd5c484f04817486"
+                "sha256:7368974534d297939492efdfdab232930440b11e2203f6df1f0c40e3242a87ea",
+                "sha256:74070045418faf710f3154403d6a16c9e67db50e5119906ca6955f1658d20f7b"
             ],
             "index": "pypi",
-            "version": "==2.27.8"
+            "version": "==2.27.9"
         },
         "types-urllib3": {
             "hashes": [
@@ -550,6 +566,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==20.13.1"
+        },
+        "virtualenv-clone": {
+            "hashes": [
+                "sha256:418ee935c36152f8f153c79824bb93eaf6f0f7984bae31d3f48f350b9183501a",
+                "sha256:44d5263bceed0bac3e1424d64f798095233b64def1c5689afa43dc3223caf5b0"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==0.5.7"
         },
         "yamlfix": {
             "hashes": [
