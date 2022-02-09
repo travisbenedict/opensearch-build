@@ -26,7 +26,7 @@ void install_npm(){
     sh'''
         sudo yum install -y gcc-c++ make
         curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
-        sudo yum install nodejs --enablerepo=nodesource
+        sudo yum install -y nodejs --enablerepo=nodesource
         node -v
       '''
 }
