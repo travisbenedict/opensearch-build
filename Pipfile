@@ -23,6 +23,8 @@ atomicwrites = "*"
 validators = "*"
 yamlfix = "*"
 yamllint = "*"
+boto3 = "*"
+aws_requests_auth = "*"
 
 [dev-packages]
 
