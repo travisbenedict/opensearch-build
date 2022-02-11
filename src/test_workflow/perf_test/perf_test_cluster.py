@@ -47,7 +47,7 @@ class PerfTestCluster(TestCluster):
         os.chdir(self.work_dir)
 
         dir = os.getcwd()
-        print(dir)
+        subprocess.check_call("pwd", cwd=dir, shell=True)
         subprocess.check_call("ls -al", cwd=dir, shell=True)
         # subprocess.check_call("python3 -m pipenv install", cwd=dir, shell=True)
         subprocess.check_call("pipenv install", cwd=dir, shell=True)
