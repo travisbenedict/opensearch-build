@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import subprocess
+import time
 
 from test_workflow.test_cluster import TestCluster
 
@@ -47,6 +48,7 @@ class PerfTestCluster(TestCluster):
         dir = os.getcwd()
         # subprocess.check_call("python3 -m pipenv install", cwd=dir, shell=True)
         subprocess.check_call("pipenv install", cwd=dir, shell=True)
+        time.sleep(120)
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
         subprocess.check_call(command, cwd=os.getcwd(), shell=True)
