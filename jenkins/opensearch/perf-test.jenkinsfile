@@ -48,9 +48,10 @@ pipeline {
                     env.BUILD_ID = buildId
                     echo "BUILD_MANIFEST: ${BUILD_MANIFEST}"
                     echo "BUILD_ID: ${BUILD_ID}"
-                    echo "Starting performance tests"
-                    runPerfTestScript(buildManifest: "${BUILD_MANIFEST}")
-                    echo "Ending performance tests"
+
+                    runPerfTestScript(buildManifest: "${BUILD_MANIFEST}",
+                        buildId: "${BUILD_ID}")
+
                 }
             }
         }
