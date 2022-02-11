@@ -47,10 +47,10 @@ class PerfTestCluster(TestCluster):
         os.chdir(self.work_dir)
 
         dir = os.getcwd()
-        subprocess.check_call("ls -al", cwd=self.current_workspace, shell=True)
-        subprocess.check_call("touch Pipfile", cwd=self.current_workspace, shell=True)
-        # subprocess.check_call("python3 -m pipenv install", cwd=dir, shell=True)
-        subprocess.check_call("pipenv install", cwd=self.current_workspace, shell=True)
+        subprocess.check_call("ls -al", cwd=self.current_workspace, shell=True, executable='/bin/bash')
+        # subprocess.check_call("touch Pipfile", cwd=self.current_workspace, shell=True)
+        subprocess.check_call("python3 -m pipenv install", cwd=self.current_workspace, shell=True, executable='/bin/bash')
+        subprocess.check_call("pipenv install", cwd=self.current_workspace, shell=True, executable='/bin/bash')
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
         subprocess.check_call(command, cwd=os.getcwd(), shell=True)
