@@ -42,7 +42,7 @@ pipeline {
                 script {
 
                     echo "Starting performance tests"
-                    runPerfTestScript()
+                    runPerfTestScript(buildManifest: "${BUILD_MANIFEST}")
                     echo "Ending performance tests"
                 }
             }
