@@ -40,7 +40,14 @@ pipeline {
             }
             steps {
                 script {
-
+                    def buildManifestObj = downloadBuildManifest(
+                        url: BUILD_MANIFEST_URL,
+                        path: BUILD_MANIFEST
+                    )
+                    String buildId = buildManifestObj.getArtifactBuildId()
+                    env.BUILD_ID = buildId
+                    echo "BUILD_MANIFEST: ${BUILD_MANIFEST}"
+                    echo "BUILD_ID: ${BUILD_ID}"
                     echo "Starting performance tests"
                     runPerfTestScript(buildManifest: "${BUILD_MANIFEST}")
                     echo "Ending performance tests"
