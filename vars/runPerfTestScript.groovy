@@ -23,7 +23,7 @@ void call(Map args = [:]) {
 
 void install_opensearch_infra_dependencies() {
     sh'''
-        pipenv install "dataclasses_json~=0.5" "aws_requests_auth~=0.4" "json2html=~=1.3.0"
+        pipenv install "dataclasses_json~=0.5" "aws_requests_auth~=0.4" "json2html~=1.3.0"
         pipenv install "aws-cdk.core~=1.143.0" "aws_cdk.aws_ec2~=1.143.0" "aws_cdk.aws_iam~=1.143.0"
         pipenv install "boto3~=1.18" "setuptools~=57.4" "retry~=0.9"
     '''
