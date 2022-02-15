@@ -25,7 +25,7 @@ class PerfTestSuite:
             os.chdir(os.path.join(self.current_workspace, self.work_dir))
             dir = os.getcwd()
             # subprocess.check_call("python3 -m pipenv install", cwd=dir, shell=True)
-            subprocess.check_call("pipenv install", cwd=dir, shell=True)
+            # subprocess.check_call("pipenv install", cwd=dir, shell=True)
 
             if self.security:
                 subprocess.check_call(f"{self.command} -s", cwd=dir, shell=True)

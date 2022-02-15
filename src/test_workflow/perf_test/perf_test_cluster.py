@@ -2,7 +2,6 @@ import json
 import logging
 import os
 import subprocess
-import time
 
 from test_workflow.test_cluster import TestCluster
 
@@ -45,16 +44,6 @@ class PerfTestCluster(TestCluster):
 
     def start(self):
         os.chdir(self.work_dir)
-
-        dir = os.getcwd()
-        subprocess.check_call("ls -al", cwd=self.current_workspace, shell=True,
-                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, env={})
-        # subprocess.check_call("touch Pipfile", cwd=self.current_workspace, shell=True)
-        subprocess.check_call("python3 -m pipenv install", cwd=self.current_workspace, shell=True,
-                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, env={})
-        subprocess.check_call("pipenv install", cwd=self.current_workspace, shell=True,
-                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, env={})
-
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
         subprocess.check_call(command, cwd=os.getcwd(), shell=True)
