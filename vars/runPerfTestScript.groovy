@@ -40,8 +40,8 @@ void install_npm(){
 
 void install_dependencies() {
     sh '''
-        sudo npm cache clean --force
-        sudo npm install -g aws-cdk
-        sudo npm install -g cdk-assume-role-credential-plugin
+        sudo npm install --global yarn
+        sudo yarn global add aws-cdk
+        sudo yarn global add cdk-assume-role-credential-plugin
     '''
 }
