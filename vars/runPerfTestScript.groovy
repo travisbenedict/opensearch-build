@@ -41,7 +41,7 @@ void install_npm(){
 void install_dependencies() {
     sh '''
         sudo npm install --global yarn
-        sudo yarn global add aws-cdk
+        sudo yarn global add aws-cdk@1.87.0
         sudo yarn global add cdk-assume-role-credential-plugin
     '''
 }
