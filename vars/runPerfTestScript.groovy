@@ -32,7 +32,7 @@ void install_opensearch_infra_dependencies() {
 void install_npm(){
     sh'''
         sudo yum install -y gcc-c++ make
-        curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+        curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
         sudo yum install -y nodejs --enablerepo=nodesource
         node -v
       '''
@@ -43,7 +43,7 @@ void install_dependencies() {
         sudo npm install -g fs-extra
         sudo npm install -g chalk@4.1.2
         sudo npm install -g @aws-cdk/cloudformation-diff
-        sudo npm install -g aws-cdk@1.124.0 --include=prod --include=dev
+        sudo npm install -g aws-cdk --include=prod --include=dev
         sudo npm install -g cdk-assume-role-credential-plugin@1.4.0 --include=prod --include=dev
     '''
 }
