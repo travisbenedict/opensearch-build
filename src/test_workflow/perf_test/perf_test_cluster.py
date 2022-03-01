@@ -46,8 +46,6 @@ class PerfTestCluster(TestCluster):
         os.chdir(self.work_dir)
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
-        subprocess.check_call("node --version", cwd=os.getcwd(), shell=True)
-        subprocess.check_call("npm list -g", cwd=os.getcwd(), shell=True)
         subprocess.check_call(command, cwd=os.getcwd(), shell=True)
         with open(self.output_file, "r") as read_file:
             load_output = json.load(read_file)
