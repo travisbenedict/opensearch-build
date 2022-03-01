@@ -40,6 +40,8 @@ void install_npm(){
 
 void install_dependencies() {
     sh '''
+        sudo npm install -g fs-extra
+        sudo npm install -g chalk@4.1.2
         sudo npm install -g aws-cdk@1.124.0 --include=prod --include=dev
         sudo npm install -g cdk-assume-role-credential-plugin@1.4.0 --include=prod --include=dev
     '''
