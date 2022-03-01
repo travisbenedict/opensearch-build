@@ -49,7 +49,12 @@ class BuildRecorder:
     def write_manifest(self) -> None:
         manifest_path = os.path.join(self.target.output_dir, "manifest.yml")
         self.get_manifest().to_file(manifest_path)
+        logging.info("Printing manifest\n")
+        manifest_lines = open(manifest_path).readlines()
+        for line in manifest_lines:
+            logging.info(line)
         logging.info(f"Created build manifest {manifest_path}")
+        raise Exception("Testing changes.......")
 
     class BuildManifestBuilder:
         def __init__(self, target: BuildTarget):
