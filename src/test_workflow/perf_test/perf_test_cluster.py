@@ -43,6 +43,7 @@ class PerfTestCluster(TestCluster):
         self.params = "".join(params_list) + role_params
 
     def start(self):
+        logging.info(self.manifest)
         os.chdir(self.work_dir)
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
