@@ -45,7 +45,7 @@ class PerfTestCluster(TestCluster):
     def start(self):
         logging.info(self.manifest)
         print("Starting perf test cluster")
-        print(f"Printing manifest \n\n\n\n{self.manifest}")
+        print(f"Printing manifest \n\n\n\n{self.manifest.__to_dict__()}")
         os.chdir(self.work_dir)
         command = f"cdk deploy {self.params} --outputs-file {self.output_file}"
         logging.info(f'Executing "{command}" in {os.getcwd()}')
