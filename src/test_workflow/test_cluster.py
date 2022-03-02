@@ -42,6 +42,7 @@ class TestCluster(abc.ABC):
         Set up the cluster. When this method returns, the cluster must be available to take requests.
         Throws ClusterCreationException if the cluster could not start for some reason. If this exception is thrown, the caller does not need to call "destroy".
         """
+        print("Creating test cluster")
         cluster = cls(*args)
         try:
             cluster.start()
