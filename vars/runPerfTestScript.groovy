@@ -3,6 +3,7 @@ void call(Map args = [:]) {
     lib = library(identifier: 'jenkins@20211123', retriever: legacySCM(scm))
     def buildManifest = lib.jenkins.BuildManifest.new(readYaml(file: args.buildManifest))
     String artifactRootUrl = buildManifest.getArtifactRootUrl(jobName, args.buildId)
+    long time = new Date().getTime()
 
     install_npm()
     install_dependencies()
@@ -14,7 +15,7 @@ void call(Map args = [:]) {
     sh([
         './test.sh',
         'perf-test',
-        "--stack test-single-disabled-${args.buildId}",
+        "--stack test-single-disabled-${args.buildId}-${time}",
         "--bundle-manifest ${args.buildManifest}",
         "--config config.yml"
 
