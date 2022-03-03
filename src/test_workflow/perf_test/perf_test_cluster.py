@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import subprocess
+import time
 
 from test_workflow.test_cluster import TestCluster
 
@@ -15,7 +16,7 @@ class PerfTestCluster(TestCluster):
         self.manifest = bundle_manifest
         self.work_dir = os.path.join("opensearch-cluster", "cdk", "single-node")
         self.current_workspace = current_workspace
-        self.stack_name = stack_name
+        self.stack_name = f"{stack_name}-{round(time.time() * 1000)}"
         self.cluster_endpoint = None
         self.cluster_port = None
         self.output_file = "output.json"
