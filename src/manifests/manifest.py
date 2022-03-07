@@ -32,7 +32,14 @@ class Manifest(ABC, Generic[T]):
         yml = yaml.safe_load(file)
         version = yml["schema-version"]
         loader = cls.from_version(version)
+        cls.remove_security(yml) # TODO: Revert this
         return loader(yml)
+
+    @classmethod
+    def remove_security(cls, yml):
+        components = yml["components"]
+        new_components = [c for c in components if c["name"] != "security"]
+        yml["components"] = new_components
 
     @classmethod
     def from_url(cls, url: str) -> T:
